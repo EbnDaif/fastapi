@@ -1,6 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
 from model import extract_feature_vectors
-from verify import calculate_similarity
 from model2 import calculate_cosine_similarity
 from typing import List
 from PIL import Image
