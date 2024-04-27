@@ -8,28 +8,6 @@ import io
 
 app = FastAPI()
 
-'''
-@app.post("/verify")
-async def verify(feature_vectors: List[List[float]]):
-    if len(feature_vectors) != 2:
-        return {"error": "Exactly two feature vectors are required"}
-
-    result = calculate_similarity(feature_vectors[0], feature_vectors[1])
-    print(11)
-    return {"result": "Same person" if result else "Different persons"}
-'''
-'''
-@app.post("/predict")
-async def predict(image_urls: List[str]):
-    images = [Image.open(requests.get(url, stream=True).raw) for url in image_urls]
-    
-    feature_vectors = extract_feature_vectors(images)
-    
-    feature_vectors = [vector.tolist() if vector is not None else None for vector in feature_vectors]
-    
-    return {"feature_vectors": feature_vectors}
-    '''
-
 
 @app.get("/")
 async def read_root():
