@@ -19,7 +19,7 @@ def calculate_cosine_similarity(vector1: List[float], vector2: List[float]) -> f
     similarity_score = torch.mm(tensor1, tensor2.t()).item()  # matrix multiplication
 
     # Check if similarity_score is less than 1
-    if similarity_score < 0.8:
+    if similarity_score > 0.8:
         result = "Same persons"
     else:
         result = "Not matched"
