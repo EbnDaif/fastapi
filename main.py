@@ -1,3 +1,4 @@
+from fastapi import FastAPI
 from fastapi import FastAPI, UploadFile, File
 from model import extract_feature_vectors
 from model2 import calculate_cosine_similarity
@@ -28,6 +29,12 @@ async def predict(image_urls: List[str]):
     
     return {"feature_vectors": feature_vectors}
     '''
+
+
+@app.get("/")
+async def read_root():
+    return {"Hello": "World"}
+
 @app.post("/predict")
 async def predict(files: List[UploadFile] = File(...)):
     images = [Image.open(io.BytesIO(await file.read())) for file in files]
