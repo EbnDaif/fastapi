@@ -25,6 +25,6 @@ def calculate_cosine_similarity(vector1: List[float], vector2: List[float], thre
     similarity_score = torch.mm(tensor1, tensor2.t()).item()
 
     # Check if similarity_score is greater than or equal to the threshold
-    is_match = similarity_score >= threshold
+    is_match = similarity_score >= 0.96
 
     return similarity_score, is_match
